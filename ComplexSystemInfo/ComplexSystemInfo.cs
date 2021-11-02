@@ -386,7 +386,6 @@ namespace ComplexSystemInfo
             }
             catch (Exception) { }
         }
-
         private void завершитьДеревоПроцессовToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StopTree_Click(sender, e);
@@ -396,7 +395,6 @@ namespace ComplexSystemInfo
         {
             Stop_Click(sender, e);
         }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             string path = Interaction.InputBox("Введите имя программы", "Запуск новой задачи");

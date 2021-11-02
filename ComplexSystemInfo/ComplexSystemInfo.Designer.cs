@@ -30,8 +30,8 @@ namespace ComplexSystemInfo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComplexSystemInfoForm));
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.SystemInfoPage = new MetroFramework.Controls.MetroTabPage();
@@ -86,7 +86,7 @@ namespace ComplexSystemInfo
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Multiline = true;
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 2;
+            this.metroTabControl.SelectedIndex = 0;
             this.metroTabControl.Size = new System.Drawing.Size(951, 512);
             this.metroTabControl.TabIndex = 0;
             this.metroTabControl.UseSelectable = true;
@@ -240,19 +240,19 @@ namespace ComplexSystemInfo
             // 
             // RAM_Chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.RAM_Chart.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.RAM_Chart.ChartAreas.Add(chartArea1);
             this.RAM_Chart.Location = new System.Drawing.Point(340, 8);
             this.RAM_Chart.Name = "RAM_Chart";
             this.RAM_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             this.RAM_Chart.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Red,
         System.Drawing.Color.Lime};
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 6;
-            this.RAM_Chart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 6;
+            this.RAM_Chart.Series.Add(series1);
             this.RAM_Chart.Size = new System.Drawing.Size(256, 256);
             this.RAM_Chart.TabIndex = 9;
             this.RAM_Chart.Text = "chart1";
