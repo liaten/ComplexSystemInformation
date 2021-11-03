@@ -9,6 +9,6 @@
 # [Скачать (Assets => ComplexSystemInfo.exe)](https://github.com/liaten/ComplexSystemInformation/releases)
 
 ## Скриншоты:
-![изображение](https://user-images.githubusercontent.com/35489460/139940200-4a92b7ff-2d67-4b74-9e4d-ff8b008a8536.png)
-![изображение](https://user-images.githubusercontent.com/35489460/139940251-68551d52-78d5-466c-bb91-85f86d754b3e.png)
-![изображение](https://user-images.githubusercontent.com/35489460/139940291-2d77a6fe-43a3-49cf-bec4-4958763e0aeb.png)
+![изображение](https://user-images.githubusercontent.com/35489460/140006372-ddd955d1-ec93-4111-90eb-5f35cdd8d653.png)
+![изображение](https://user-images.githubusercontent.com/35489460/140006392-1e36a224-995b-4ae0-8a92-b53307914a7c.png)
+![изображение](https://user-images.githubusercontent.com/35489460/140006420-84aaa98a-7231-48b8-a1e7-eb026df8172f.png)
