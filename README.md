@@ -13,6 +13,6 @@
 ![изображение](https://user-images.githubusercontent.com/35489460/140006392-1e36a224-995b-4ae0-8a92-b53307914a7c.png)
 ![изображение](https://user-images.githubusercontent.com/35489460/140006420-84aaa98a-7231-48b8-a1e7-eb026df8172f.png)
 
-Процесс загрузки:
+## Процесс загрузки:
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/35489460/141673213-eafb6059-ed85-4f0d-bc37-e676f4c23a09.gif)
