@@ -30,8 +30,8 @@ namespace ComplexSystemInfo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComplexSystemInfoForm));
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.SystemInfoPage = new MetroFramework.Controls.MetroTabPage();
@@ -64,9 +64,18 @@ namespace ComplexSystemInfo
             this.Stop = new System.Windows.Forms.ToolStripButton();
             this.StopTree = new System.Windows.Forms.ToolStripButton();
             this.AutoUpdateButton = new System.Windows.Forms.ToolStripButton();
+            this.ViewPage = new MetroFramework.Controls.MetroTabPage();
+            this.macCB = new MetroFramework.Controls.MetroComboBox();
             this.Update_Resourses_Timer = new System.Windows.Forms.Timer(this.components);
             this.Update_TaskManager = new System.Windows.Forms.Timer(this.components);
-            this.ViewPage = new MetroFramework.Controls.MetroTabPage();
+            this.ViewGPULabel_2 = new System.Windows.Forms.Label();
+            this.ViewGPULabel_1 = new System.Windows.Forms.Label();
+            this.ViewHDDLabel_2 = new System.Windows.Forms.Label();
+            this.ViewHDDLabel_1 = new System.Windows.Forms.Label();
+            this.ViewRamLabel_2 = new System.Windows.Forms.Label();
+            this.ViewRamLabel_1 = new System.Windows.Forms.Label();
+            this.ViewProcLabel_2 = new System.Windows.Forms.Label();
+            this.ViewProcLabel_1 = new System.Windows.Forms.Label();
             this.metroTabControl.SuspendLayout();
             this.SystemInfoPage.SuspendLayout();
             this.LoadPage.SuspendLayout();
@@ -74,6 +83,7 @@ namespace ComplexSystemInfo
             this.TaskManagerPage.SuspendLayout();
             this.metroContextMenu1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.ViewPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl
@@ -87,8 +97,8 @@ namespace ComplexSystemInfo
             this.metroTabControl.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl.Multiline = true;
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 0;
-            this.metroTabControl.Size = new System.Drawing.Size(783, 512);
+            this.metroTabControl.SelectedIndex = 3;
+            this.metroTabControl.Size = new System.Drawing.Size(784, 511);
             this.metroTabControl.TabIndex = 0;
             this.metroTabControl.UseSelectable = true;
             this.metroTabControl.SelectedIndexChanged += new System.EventHandler(this.metroTabControl_SelectedIndexChanged);
@@ -112,7 +122,7 @@ namespace ComplexSystemInfo
             this.SystemInfoPage.HorizontalScrollbarSize = 10;
             this.SystemInfoPage.Location = new System.Drawing.Point(4, 41);
             this.SystemInfoPage.Name = "SystemInfoPage";
-            this.SystemInfoPage.Size = new System.Drawing.Size(775, 467);
+            this.SystemInfoPage.Size = new System.Drawing.Size(776, 466);
             this.SystemInfoPage.Style = MetroFramework.MetroColorStyle.Black;
             this.SystemInfoPage.TabIndex = 0;
             this.SystemInfoPage.Text = "Информация о системе";
@@ -241,19 +251,19 @@ namespace ComplexSystemInfo
             // 
             // RAM_Chart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.RAM_Chart.ChartAreas.Add(chartArea3);
+            chartArea2.Name = "ChartArea1";
+            this.RAM_Chart.ChartAreas.Add(chartArea2);
             this.RAM_Chart.Location = new System.Drawing.Point(340, 8);
             this.RAM_Chart.Name = "RAM_Chart";
             this.RAM_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             this.RAM_Chart.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Red,
         System.Drawing.Color.Lime};
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 6;
-            this.RAM_Chart.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 6;
+            this.RAM_Chart.Series.Add(series2);
             this.RAM_Chart.Size = new System.Drawing.Size(256, 256);
             this.RAM_Chart.TabIndex = 9;
             this.RAM_Chart.Text = "chart1";
@@ -340,7 +350,7 @@ namespace ComplexSystemInfo
             this.TaskManagerPage.HorizontalScrollbarSize = 10;
             this.TaskManagerPage.Location = new System.Drawing.Point(4, 41);
             this.TaskManagerPage.Name = "TaskManagerPage";
-            this.TaskManagerPage.Size = new System.Drawing.Size(775, 467);
+            this.TaskManagerPage.Size = new System.Drawing.Size(776, 466);
             this.TaskManagerPage.TabIndex = 2;
             this.TaskManagerPage.Text = "Диспетчер Задач";
             this.TaskManagerPage.VerticalScrollbarBarColor = true;
@@ -361,7 +371,7 @@ namespace ComplexSystemInfo
             this.metroListView1.MultiSelect = false;
             this.metroListView1.Name = "metroListView1";
             this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(775, 442);
+            this.metroListView1.Size = new System.Drawing.Size(776, 441);
             this.metroListView1.TabIndex = 4;
             this.metroListView1.UseCompatibleStateImageBehavior = false;
             this.metroListView1.UseSelectable = true;
@@ -410,7 +420,7 @@ namespace ComplexSystemInfo
             this.AutoUpdateButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(775, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(776, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -465,6 +475,40 @@ namespace ComplexSystemInfo
             this.AutoUpdateButton.ToolTipText = "Автообновление: выкл";
             this.AutoUpdateButton.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // ViewPage
+            // 
+            this.ViewPage.Controls.Add(this.ViewGPULabel_2);
+            this.ViewPage.Controls.Add(this.ViewGPULabel_1);
+            this.ViewPage.Controls.Add(this.ViewHDDLabel_2);
+            this.ViewPage.Controls.Add(this.ViewHDDLabel_1);
+            this.ViewPage.Controls.Add(this.ViewRamLabel_2);
+            this.ViewPage.Controls.Add(this.ViewRamLabel_1);
+            this.ViewPage.Controls.Add(this.ViewProcLabel_2);
+            this.ViewPage.Controls.Add(this.ViewProcLabel_1);
+            this.ViewPage.Controls.Add(this.macCB);
+            this.ViewPage.HorizontalScrollbarBarColor = true;
+            this.ViewPage.HorizontalScrollbarHighlightOnWheel = false;
+            this.ViewPage.HorizontalScrollbarSize = 10;
+            this.ViewPage.Location = new System.Drawing.Point(4, 41);
+            this.ViewPage.Name = "ViewPage";
+            this.ViewPage.Size = new System.Drawing.Size(776, 466);
+            this.ViewPage.TabIndex = 3;
+            this.ViewPage.Text = "Обзор";
+            this.ViewPage.VerticalScrollbarBarColor = true;
+            this.ViewPage.VerticalScrollbarHighlightOnWheel = false;
+            this.ViewPage.VerticalScrollbarSize = 10;
+            // 
+            // macCB
+            // 
+            this.macCB.FormattingEnabled = true;
+            this.macCB.ItemHeight = 23;
+            this.macCB.Location = new System.Drawing.Point(8, 3);
+            this.macCB.Name = "macCB";
+            this.macCB.Size = new System.Drawing.Size(132, 29);
+            this.macCB.TabIndex = 2;
+            this.macCB.UseSelectable = true;
+            this.macCB.SelectedIndexChanged += new System.EventHandler(this.macCB_SelectedIndexChanged);
+            // 
             // Update_Resourses_Timer
             // 
             this.Update_Resourses_Timer.Enabled = true;
@@ -476,19 +520,101 @@ namespace ComplexSystemInfo
             this.Update_TaskManager.Interval = 6000;
             this.Update_TaskManager.Tick += new System.EventHandler(this.Update_TaskManager_Tick);
             // 
-            // ViewPage
+            // ViewGPULabel_2
             // 
-            this.ViewPage.HorizontalScrollbarBarColor = true;
-            this.ViewPage.HorizontalScrollbarHighlightOnWheel = false;
-            this.ViewPage.HorizontalScrollbarSize = 10;
-            this.ViewPage.Location = new System.Drawing.Point(4, 41);
-            this.ViewPage.Name = "ViewPage";
-            this.ViewPage.Size = new System.Drawing.Size(775, 467);
-            this.ViewPage.TabIndex = 3;
-            this.ViewPage.Text = "Обзор";
-            this.ViewPage.VerticalScrollbarBarColor = true;
-            this.ViewPage.VerticalScrollbarHighlightOnWheel = false;
-            this.ViewPage.VerticalScrollbarSize = 10;
+            this.ViewGPULabel_2.AutoSize = true;
+            this.ViewGPULabel_2.BackColor = System.Drawing.Color.Transparent;
+            this.ViewGPULabel_2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewGPULabel_2.ForeColor = System.Drawing.Color.Black;
+            this.ViewGPULabel_2.Location = new System.Drawing.Point(5, 257);
+            this.ViewGPULabel_2.Name = "ViewGPULabel_2";
+            this.ViewGPULabel_2.Size = new System.Drawing.Size(84, 17);
+            this.ViewGPULabel_2.TabIndex = 17;
+            this.ViewGPULabel_2.Text = "GPU_LABEL";
+            // 
+            // ViewGPULabel_1
+            // 
+            this.ViewGPULabel_1.AutoSize = true;
+            this.ViewGPULabel_1.BackColor = System.Drawing.Color.Transparent;
+            this.ViewGPULabel_1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewGPULabel_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.ViewGPULabel_1.Location = new System.Drawing.Point(5, 223);
+            this.ViewGPULabel_1.Name = "ViewGPULabel_1";
+            this.ViewGPULabel_1.Size = new System.Drawing.Size(89, 17);
+            this.ViewGPULabel_1.TabIndex = 16;
+            this.ViewGPULabel_1.Text = "Видеокарта";
+            // 
+            // ViewHDDLabel_2
+            // 
+            this.ViewHDDLabel_2.AutoSize = true;
+            this.ViewHDDLabel_2.BackColor = System.Drawing.Color.Transparent;
+            this.ViewHDDLabel_2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewHDDLabel_2.ForeColor = System.Drawing.Color.Black;
+            this.ViewHDDLabel_2.Location = new System.Drawing.Point(5, 192);
+            this.ViewHDDLabel_2.Name = "ViewHDDLabel_2";
+            this.ViewHDDLabel_2.Size = new System.Drawing.Size(84, 17);
+            this.ViewHDDLabel_2.TabIndex = 15;
+            this.ViewHDDLabel_2.Text = "HDD_LABEL";
+            // 
+            // ViewHDDLabel_1
+            // 
+            this.ViewHDDLabel_1.AutoSize = true;
+            this.ViewHDDLabel_1.BackColor = System.Drawing.Color.Transparent;
+            this.ViewHDDLabel_1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewHDDLabel_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.ViewHDDLabel_1.Location = new System.Drawing.Point(5, 160);
+            this.ViewHDDLabel_1.Name = "ViewHDDLabel_1";
+            this.ViewHDDLabel_1.Size = new System.Drawing.Size(103, 17);
+            this.ViewHDDLabel_1.TabIndex = 14;
+            this.ViewHDDLabel_1.Text = "Жесткий диск";
+            // 
+            // ViewRamLabel_2
+            // 
+            this.ViewRamLabel_2.AutoSize = true;
+            this.ViewRamLabel_2.BackColor = System.Drawing.Color.Transparent;
+            this.ViewRamLabel_2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewRamLabel_2.ForeColor = System.Drawing.Color.Black;
+            this.ViewRamLabel_2.Location = new System.Drawing.Point(5, 130);
+            this.ViewRamLabel_2.Name = "ViewRamLabel_2";
+            this.ViewRamLabel_2.Size = new System.Drawing.Size(86, 17);
+            this.ViewRamLabel_2.TabIndex = 13;
+            this.ViewRamLabel_2.Text = "RAM_LABEL";
+            // 
+            // ViewRamLabel_1
+            // 
+            this.ViewRamLabel_1.AutoSize = true;
+            this.ViewRamLabel_1.BackColor = System.Drawing.Color.Transparent;
+            this.ViewRamLabel_1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewRamLabel_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.ViewRamLabel_1.Location = new System.Drawing.Point(5, 104);
+            this.ViewRamLabel_1.Name = "ViewRamLabel_1";
+            this.ViewRamLabel_1.Size = new System.Drawing.Size(150, 17);
+            this.ViewRamLabel_1.TabIndex = 12;
+            this.ViewRamLabel_1.Text = "Оперативная память";
+            // 
+            // ViewProcLabel_2
+            // 
+            this.ViewProcLabel_2.AutoSize = true;
+            this.ViewProcLabel_2.BackColor = System.Drawing.Color.Transparent;
+            this.ViewProcLabel_2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewProcLabel_2.ForeColor = System.Drawing.Color.Black;
+            this.ViewProcLabel_2.Location = new System.Drawing.Point(5, 76);
+            this.ViewProcLabel_2.Name = "ViewProcLabel_2";
+            this.ViewProcLabel_2.Size = new System.Drawing.Size(93, 17);
+            this.ViewProcLabel_2.TabIndex = 11;
+            this.ViewProcLabel_2.Text = "PROC_LABEL";
+            // 
+            // ViewProcLabel_1
+            // 
+            this.ViewProcLabel_1.AutoSize = true;
+            this.ViewProcLabel_1.BackColor = System.Drawing.Color.Transparent;
+            this.ViewProcLabel_1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewProcLabel_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.ViewProcLabel_1.Location = new System.Drawing.Point(5, 48);
+            this.ViewProcLabel_1.Name = "ViewProcLabel_1";
+            this.ViewProcLabel_1.Size = new System.Drawing.Size(81, 17);
+            this.ViewProcLabel_1.TabIndex = 10;
+            this.ViewProcLabel_1.Text = "Процессор";
             // 
             // ComplexSystemInfoForm
             // 
@@ -497,9 +623,10 @@ namespace ComplexSystemInfo
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(783, 512);
+            this.ClientSize = new System.Drawing.Size(784, 511);
             this.Controls.Add(this.metroTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "ComplexSystemInfoForm";
             this.Text = "Complex System Information";
             this.Load += new System.EventHandler(this.ComplexSystemInfoForm_Load);
@@ -514,6 +641,8 @@ namespace ComplexSystemInfo
             this.metroContextMenu1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.ViewPage.ResumeLayout(false);
+            this.ViewPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -553,6 +682,15 @@ namespace ComplexSystemInfo
         private System.Windows.Forms.Timer Update_TaskManager;
         private System.Windows.Forms.ToolStripButton AutoUpdateButton;
         private MetroFramework.Controls.MetroTabPage ViewPage;
+        private MetroFramework.Controls.MetroComboBox macCB;
+        private System.Windows.Forms.Label ViewGPULabel_2;
+        private System.Windows.Forms.Label ViewGPULabel_1;
+        private System.Windows.Forms.Label ViewHDDLabel_2;
+        private System.Windows.Forms.Label ViewHDDLabel_1;
+        private System.Windows.Forms.Label ViewRamLabel_2;
+        private System.Windows.Forms.Label ViewRamLabel_1;
+        private System.Windows.Forms.Label ViewProcLabel_2;
+        private System.Windows.Forms.Label ViewProcLabel_1;
     }
 }
 

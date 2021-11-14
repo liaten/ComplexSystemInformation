@@ -30,9 +30,9 @@ namespace ComplexSystemInfo
         private void InitializeComponent()
         {
             this.PBPanel = new System.Windows.Forms.Panel();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MainPB = new System.Windows.Forms.ProgressBar();
-            this.StatusLabel = new System.Windows.Forms.Label();
             this.PBPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +45,17 @@ namespace ComplexSystemInfo
             this.PBPanel.Padding = new System.Windows.Forms.Padding(15, 60, 15, 15);
             this.PBPanel.Size = new System.Drawing.Size(919, 431);
             this.PBPanel.TabIndex = 1;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatusLabel.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StatusLabel.Location = new System.Drawing.Point(15, 60);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(311, 25);
+            this.StatusLabel.TabIndex = 0;
+            this.StatusLabel.Text = "Получаем данные о системе...";
             // 
             // panel1
             // 
@@ -63,17 +74,6 @@ namespace ComplexSystemInfo
             this.MainPB.Name = "MainPB";
             this.MainPB.Size = new System.Drawing.Size(504, 30);
             this.MainPB.TabIndex = 0;
-            // 
-            // StatusLabel
-            // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatusLabel.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StatusLabel.Location = new System.Drawing.Point(15, 60);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(311, 25);
-            this.StatusLabel.TabIndex = 0;
-            this.StatusLabel.Text = "Получаем данные о системе...";
             // 
             // Load_Screen
             // 

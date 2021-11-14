@@ -6,9 +6,15 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using System.Net;
+using Newtonsoft.Json;
+using FireSharp.Response;
 
 namespace ComplexSystemInfo
 {
@@ -28,7 +34,18 @@ namespace ComplexSystemInfo
         private static List<Process> processes;
         private static ListViewItemComparer comparer;
         public static Load_Screen ls = new Load_Screen();
+        IFirebaseConfig FCon;
+        IFirebaseClient client;
 
+        // получить mac адрес
+
+        public string GetMacAddr()
+        {
+            return (from nic in NetworkInterface.GetAllNetworkInterfaces()
+                        where nic.OperationalStatus == OperationalStatus.Up
+                        select nic.GetPhysicalAddress().ToString()
+                        ).FirstOrDefault();
+        }
         // получить все процессы
 
         private void GetProcesses()
@@ -484,7 +501,49 @@ namespace ComplexSystemInfo
             RAM_Load_2.Location = new Point(8, RAM_Load_1.Location.Y + RAM_Load_1.Size.Height + 8);
             HDD_Cap1.Location = new Point(8, RAM_Load_2.Location.Y + RAM_Load_2.Size.Height + 8);
             HDD_Cap2.Location = new Point(8, HDD_Cap1.Location.Y + HDD_Cap1.Size.Height + 8);
+            ls.ChangeStatusLabel("Получаем ваш mac адрес...");
+            string mac = GetMacAddr();
+            ls.ChangeStatusLabel("Настраиваем конфиги Firebase...");
+            FCon = new FirebaseConfig()
+            {
+                AuthSecret = "lWDF8LtmHau0iIknPYlfpZZqPodgtRasWg4F9XSC",
+                BasePath = "https://complexsysteminfo-default-rtdb.europe-west1.firebasedatabase.app/"
+            };
+            ls.ChangeStatusLabel("Поднимаем восстание машин...");
+            try
+            {
+                client = new FireSharp.FirebaseClient(FCon);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There was problem in the internet");
+            }
+
+            UserPC upc = new UserPC()
+            {
+                MACADDR = mac,
+                PROC = ProcLabel2.Text,
+                RAM = RamLabel2.Text,
+                HDD = HDD_Label2.Text,
+                GPU = GPU_Label2.Text
+            };
+            var setter = client.Set("UserPC/" + mac, upc);
+            FirebaseResponse res = client.Get(@"UserPC");
+            Dictionary<string, UserPC> data = JsonConvert.DeserializeObject<Dictionary<string, UserPC>>(res.Body.ToString());
+            PopulateRTB(data);
         }
+
+        // заполнить выпадающий список данными
+
+        private void PopulateRTB(Dictionary<string, UserPC> record)
+        {
+            macCB.Items.Clear();
+            foreach (var item in record)
+            {
+                macCB.Items.Add(item.Key);
+            }
+        }
+
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             if (AutoUpdateButton.Text == "Автообновление: вкл")
@@ -498,6 +557,25 @@ namespace ComplexSystemInfo
                 Update_TaskManager.Enabled = true;
                 Text = "Complex System Information | Запущено процессов: " + processes.Count.ToString();
             }
+        }
+
+        private void macCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var result = client.Get("UserPC/" + macCB.Text);
+            UserPC std = result.ResultAs<UserPC>();
+            ViewProcLabel_2.Text = std.PROC;
+            ViewHDDLabel_2.Text = std.HDD;
+            ViewGPULabel_2.Text = std.GPU;
+            ViewRamLabel_2.Text = std.RAM;
+            macCB.Location = new Point(8, 8);
+            ViewProcLabel_1.Location = new Point(8, macCB.Location.Y + macCB.Size.Height + 8);
+            ViewProcLabel_2.Location = new Point(8, ViewProcLabel_1.Location.Y + ViewProcLabel_1.Size.Height + 8);
+            ViewRamLabel_1.Location = new Point(8, ViewProcLabel_2.Location.Y + ViewProcLabel_2.Size.Height + 8);
+            ViewRamLabel_2.Location = new Point(8, ViewRamLabel_1.Location.Y + ViewRamLabel_1.Size.Height + 8);
+            ViewGPULabel_1.Location = new Point(8, ViewRamLabel_2.Location.Y + ViewRamLabel_2.Size.Height + 8);
+            ViewGPULabel_2.Location = new Point(8, ViewGPULabel_1.Location.Y + ViewGPULabel_1.Size.Height + 8);
+            ViewHDDLabel_1.Location = new Point(8, ViewGPULabel_2.Location.Y + ViewGPULabel_2.Size.Height + 8);
+            ViewHDDLabel_2.Location = new Point(8, ViewHDDLabel_1.Location.Y + ViewHDDLabel_1.Size.Height + 8);
         }
     }
 }
